@@ -3,7 +3,7 @@ const app = express();
 
 let products = require('./model/Product.js')
 
-const PORT = process.env.PORT || 3000;
+const port = process.env.port || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
@@ -61,6 +61,6 @@ app.delete('/products/:id',(req,res) =>{
         res.json(products);
     }
 })
-app.listen(PORT, ()=>{
-    console.log(`Server running on http://127.0.0.1:${PORT}`)
+app.listen(port, ()=>{
+    console.log(`Server running on http://127.0.0.1:${port}`)
 })
